@@ -9,7 +9,7 @@ const SideBarBottom = () => {
         </span>
         <div className="flex flex-col">
           <span>Upgrade plan</span>
-          <span className="text-xs text-token-text-tertiary line-clamp-1">
+          <span className="text-sm text-token-text-tertiary line-clamp-1">
             Get GPT-4, DALL·E, and more
           </span>
         </div>
@@ -18,7 +18,7 @@ const SideBarBottom = () => {
         <div className="w-8 h-8 rounded-full bg-red-400 overflow-hidden">
           img
         </div>
-        <p className="font-semibold">Arko Roy</p>
+        <p className="text-sm">Arko Roy</p>
       </div>
     </div>
   );

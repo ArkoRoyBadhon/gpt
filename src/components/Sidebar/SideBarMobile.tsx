@@ -8,37 +8,28 @@ import Link from "next/link";
 import SideBarBottom from "./SideBarBottom";
 import ArrowIcon from "@/utils/Icons/arrowIcon";
 import { useState } from "react";
+import { useMyContext } from "../provider/MyContextProvider";
 
-const SideBar = () => {
-  const [collapseBtn, setCollapseBtn] = useState(false);
+const SideBarMobile = () => {
+  const { menuOpen, setMenuClose } = useMyContext();
+
   return (
-    <div
-      className={`relative ${collapseBtn ? "w-[0px]" : "w-[260px]"}  h-[100vh]`}
-    >
+    <div className={`relative custom_transition  h-[100vh]`}>
       <div
-        onClick={() => setCollapseBtn(!collapseBtn)}
-        className="absolute top-[50%] z-30 right-[-20px] cursor-pointer"
-      >
-        {collapseBtn ? (
-          <div className="">
-            <ArrowIcon />
-          </div>
-        ) : (
-          <div className="">
-            <ArrowIcon />
-          </div>
-        )}
-      </div>
+        className={`absolute z-30 bg-black  top-0 w-[100vw] h-full opacity-50 custom_transition ${
+          menuOpen ? "left-[0px]" : "left-[-800px]"
+        }`}
+      ></div>
       <div
-        className={`flex-shrink-0 overflow-x-hidden   visible h-[100vh] overflow-y-scroll bg-gray-100 ${
-          collapseBtn ? " hidden" : "block"
+        className={`absolute  w-[260px] flex-shrink-0 overflow-x-hidden visible h-[100vh] overflow-y-scroll bg-gray-100 z-40 custom_transition ${
+          menuOpen ? "left-[0px]" : "left-[-500px]"
         }`}
       >
         <div className="px-[10px]  pb-[85px]">
-          <div className="h-[40px] hover:bg-gray-200 w-[228px] flex justify-between items-center px-[9px] rounded-md mt-[14px] fixed ">
+          <div className="h-[40px] hover:bg-gray-200 w-[228px] flex justify-between items-center px-[9px] rounded-md mt-[14px] fixed z-30 bg-gray-100 cursor-pointer">
             <div className="flex gap-[12px] items-center">
               <ChatgptIcon />
-              <div className="grow overflow-hidden text-ellipsis whitespace-nowrap text-sm font-bold">
+              <div className="grow overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold">
                 New chat
               </div>
             </div>
@@ -213,8 +204,16 @@ const SideBar = () => {
           <SideBarBottom />
         </div>
       </div>
+      <div
+        onClick={() => setMenuClose(false)}
+        className={`absolute z-40 bg-gray-400 w-8 h-6 top-[10px] flex justify-center items-center rounded-md custom_transition ${
+          menuOpen ? "left-[265px]" : "left-[-800px]"
+        }`}
+      >
+        X
+      </div>
     </div>
   );
 };
 
-export default SideBar;
+export default SideBarMobile;

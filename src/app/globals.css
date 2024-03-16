@@ -36,4 +36,7 @@
   .custom-gradient-bg {
     @apply bg-gradient-to-l from-[#e3e3e3] via-[#e3e3e3] to-transparent;
   }
+  .custom_transition {
+    @apply transition-all ease-in;
+  }
 }
