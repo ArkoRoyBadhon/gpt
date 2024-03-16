@@ -5,8 +5,9 @@ import MainBody from "@/components/body/MainBody";
 
 const HomeView = () => {
   return (
-    <div className="flex">
-      <div className="hidden md:block bg-gray-100">
+    <div className="flex h-[100vh]">
+      {/* <div className="hidden md:block bg-gray-100"> */}
+      <div className="block lg:hidden bg-gray-100">
         <SideBar />
       </div>
       <div className="block md:hidden bg-gray-100">

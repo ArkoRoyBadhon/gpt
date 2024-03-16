@@ -10,14 +10,14 @@ import ArrowIcon from "@/utils/Icons/arrowIcon";
 import { useState } from "react";
 
 const SideBar = () => {
-  const [collapseBtn, setCollapseBtn] = useState(false);
+  const [collapseBtn, setCollapseBtn] = useState(true);
   return (
     <div
-      className={`relative transition-all ease-in ${collapseBtn ? "w-[0px]" : "w-[260px]"}  h-[100vh]`}
+      className={`relative transition-all ease-in ${collapseBtn ? "w-[0px]" : "w-[260px]"}  h-[100vh] bg-red-300`}
     >
       <div
         onClick={() => setCollapseBtn(!collapseBtn)}
-        className="absolute top-[50%] z-30 right-[-20px] cursor-pointer"
+        className="absolute hidden md:block top-[50%] z-30 right-[-20px] cursor-pointer"
       >
         {collapseBtn ? (
           <div className="">

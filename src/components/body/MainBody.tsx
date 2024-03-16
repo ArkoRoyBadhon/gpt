@@ -38,7 +38,7 @@ const MainBody = () => {
         <MainBodyData />
       </div>
       <div className="absolute bottom-0 w-full pt-2 md:pt-0 md:border-transparent bg-white flex items-center justify-center flex-col left-[0px]">
-        <form className=" flex flex-row gap-3 w-[60%] lg:w-[75%] md:[50%] last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl mx-auto">
+        <form className=" flex flex-row gap-3 w-[80%] lg:w-[75%] md:[50%] last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl mx-auto">
           <div className="relative flex h-full flex-1 flex-col">
             <div className="flex w-full items-center">
               <div className="overflow-hidden flex flex-col w-full flex-grow relative border rounded-2xl">
